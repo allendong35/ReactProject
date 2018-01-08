@@ -163,7 +163,7 @@ module.exports = {
     hot:true,
     proxy: {//外部代理,对于代理的请求可以通过提供一个函数来重写，这个函数可以查看或者改变http请求。下面的例子就会重写HTTP请求，其主要作用就是移除URL前面的/tj.gif部分。
       '/tj.gif': {
-        target: 'http://hybrid.dev.caifupai.com',
+        // target: 'http://hybrid.dev.dongwei.com',
         secure: false,
         changeOrigin: true
       }
