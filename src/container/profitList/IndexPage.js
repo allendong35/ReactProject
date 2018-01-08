@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import frog from '@cfp/frog';
+// import frog from '@cfp/frog';
 import {connect} from 'react-redux';
 
 // @connect(state => ({}),actions)

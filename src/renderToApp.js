@@ -1,7 +1,7 @@
-require('raf').polyfill();
-require('fastclick').attach(document.body);
-require('./lib/util/reportError').spyAll();
-require('./lib/util/userTiming');
+// require('raf').polyfill();
+require('fastclick').attach(document.body);  //从点击屏幕上的元素到触发元素的 click 事件，移动浏览器会有大约 300 毫秒的等待时间。为什么这么设计呢？ 因为它想看看你是不是要进行双击（double tap）操作。
+// require('./lib/util/reportError').spyAll();
+// require('./lib/util/userTiming');
 
 import React from 'react';
 import {render} from 'react-dom';
@@ -9,7 +9,7 @@ import {Provider} from 'react-redux';
 import {AppContainer} from 'react-hot-loader';
 // import Root from './container/Root';
 import {version} from '../package.json';
-import {detectWebpFeatures} from './lib/util/webp';
+import {detectWebpFeatures} from './lib/webp';
 // import {setCfpTiming, setCfpDiffTiming} from 'lib/util/reportTiming';
 import isBoolean from 'lodash/isBoolean';
 // import configureStore from './store/configureStore';

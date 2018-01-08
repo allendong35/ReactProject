@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "fastclick": "^1.0.6",
     "lodash": "^4.17.4",
     "object-assign": "^4.1.1",
     "react": "^16.1.1",
