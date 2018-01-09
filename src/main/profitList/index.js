@@ -11,17 +11,3 @@ if (module.hot) {
     render(IndexPage);
   });
 }
-
-// import React, {Component} from 'react';
-// import PropTypes from 'prop-types';
-// import {connect} from 'react-redux';
-//
-// // @connect(state => ({}),actions)
-// export default class  IndexPage extends Component{
-//
-//   render(){
-//     return(
-//         <div className="fn">更多产品<span className="icon"/>敬请期待</div>
-//     );
-//   }
-// };

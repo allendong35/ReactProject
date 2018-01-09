@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 // @connect(state => ({}),actions)
+// import
 export default class  IndexPage extends Component{
   static  displayName = 'profitList';
   static  propTypes = {
@@ -11,7 +12,7 @@ export default class  IndexPage extends Component{
   }
   render(){
     return(
-        <div className="fn">更多产品<span className="icon"/>敬请期待</div>
+        <div className="fn">更多产品<span className="icon"/>敬请期1待</div>
     );
   }
 };
