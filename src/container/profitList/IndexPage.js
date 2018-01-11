@@ -14,7 +14,8 @@ export default class  IndexPage extends Component{
   render(){
     const {profitItemsList} = this.props;
     return(
-        <div className="">
+        <div className={`mod mod-profitList`}>
+          <div className="scroll-warp">
           <div className="head">
           </div>
           <div className="item-list">
