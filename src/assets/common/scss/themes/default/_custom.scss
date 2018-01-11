@@ -1,0 +1,53 @@
+// Prefix classname
+$cssPrefix: cfp-;
+
+// ------ Base & Require ------
+
+$fontFamily: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "PingFang SC", "Helvetica Neue", sans-serif;
+
+// Color
+$orange: #eb9650;
+$neworange: #ff8a00;
+$lightOrange: #ffb272;
+$baseLogoBlue: #282d41;
+
+$white: #ffffff;
+
+// blue level
+$lightblue: #1faed6;
+
+// grey level
+$deepGrey: #333333;
+$lightDeepGrey: #555555;
+$mediumGrey: #666666;
+$grey: #999999;
+$weakGrey: #aaaaaa;
+$lightGrey: #cccccc;
+$bgGrey: #eeeeee;
+
+// boder color
+$borderColor: #cccccc;
+
+// text color
+$darkTxtColor: #222735;
+$txtColor: #8e8e93;
+$midTxtColor: #4e525d;
+$lightTxtColor: #b2b4b8;
+$numorange: #e68c2a;
+// btn
+$btnHeight: 79px;
+$btnBorderRadiusBase: 5px;
+$btnBorderRadiusLarge: 10px;
+$btnDefaultBg: $orange;
+$btnDefaultColor: $white;
+$btnDisabledBg: $lightGrey;
+$btnDisabledColor: $white;
+$btnEndBg: #8c9fa6;
+$btnBaseFontSize: 28px;
+
+// 收益涨幅颜色
+$riseColor: $orange;
+$fallColor: #3aa273;
+
+//红色数值
+$red: #f4333c;

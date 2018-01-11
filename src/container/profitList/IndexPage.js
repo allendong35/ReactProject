@@ -4,15 +4,31 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 // @connect(state => ({}),actions)
-// import
+import "./index.scss"
 export default class  IndexPage extends Component{
   static  displayName = 'profitList';
   static  propTypes = {
-
+    fofXyh: PropTypes.string,
+    profitItemsList: PropTypes.array
   }
   render(){
+    const {profitItemsList} = this.props;
     return(
-        <div className="fn">更多产品<span className="icon"/>敬请期1待</div>
+        <div className="">
+          <div className="head">
+          </div>
+          <div className="item-list">
+            {
+              profitItemsList.map((item) => (
+                  <div key={item.pid} className="profitItem" onClick={this.goProductDetail(item.pid)}>
+                    <div className="fundName">{item.fundName}</div>
+                    <div className="profitE2">{item.profitE2}</div>
+                    <div className="img"><img src={item.shareImgUrl}/></div>
+                  </div>
+              ))
+            }
+          </div>
+        </div>
     );
   }
 };
