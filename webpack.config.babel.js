@@ -34,14 +34,14 @@ plugins.push(
     new HappyPack({
         loaders: ['babel-loader?cacheDirectory=true']
     }),
-    // new webpack.DefinePlugin({
-    //     'process.env': {
-    //         NODE_ENV: options.minimize ? JSON.stringify('production') : JSON.stringify('development'),
-    //         API: JSON.stringify(process.env.API),
-    //         REMOTEDEV_HOSTNAME: options.minimize ? null : JSON.stringify(getLocalIp()),
-    //         REMOTEDEV_PORT: options.minimize ? null : JSON.stringify(process.env.npm_package_remotedev_port)
-    //     }
-    // })
+    new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: options.minimize ? JSON.stringify('production') : JSON.stringify('development'),
+            // API: JSON.stringify(process.env.API),
+            // REMOTEDEV_HOSTNAME: options.minimize ? null : JSON.stringify(getLocalIp()),
+            // REMOTEDEV_PORT: options.minimize ? null : JSON.stringify(process.env.npm_package_remotedev_port)
+        }
+    })
 );
 // plugins.push(new webpack.NoEmitOnErrorsPlugin());
 

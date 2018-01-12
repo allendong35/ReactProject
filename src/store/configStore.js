@@ -1,24 +1,24 @@
 import {createStore,applyMiddleware,compose} from 'redux';
-import {createLogger} from 'redux-logger';
-import thunk from 'redux-thunk';
+import createLog from './log';
 import qs from 'query-string';
+import createSagaMiddleware from 'redux-saga';
 
-export default function (reducer) {
+export default function (reducer,saga) {
 
-  const enhancer = [];
+  
+  const enhancers = [];
+  const middlewares = [];
+  /* ------------- Saga Middleware ------------- */
+  let sagaMiddleware;
+  if (saga){
+    sagaMiddleware = createSagaMiddleware();
+    middlewares.push(sagaMiddleware);
+  }
 
-  enhancer.push(applyMiddleware(thunk,createLogger({
-    predicate: (getState, {type}) => !LOGGING_BLACKLIST.includes(type),
-    colors: {
-      title: false,
-      prevState: false,
-      action: false,
-      nextState: false,
-      error: false
-    },
-    titleFormatter: ({type}, time) => `action ${type} @${time}`,
-    stateTransformer: state => immutable.asMutable(state)
-  })));
+  if (process.env.NODE_ENV !== 'production') {
+    middleware.push(createLog());
+  }
+
   const  store = createStore(reducer,{query:qs.parse(location.search)||{}},compose(...enhancer));
 
   return store;

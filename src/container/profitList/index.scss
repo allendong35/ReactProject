@@ -4,48 +4,48 @@
   height: 350px;
   marginBottom: 30px
 },
-.headView: {
-  height: '100px',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
+.headView {
+  height: 100px;
+  flexDirection: 'row';
+  justifyContent: 'space-between';
   backgroundColor: 'white'
 },
-.headText1: {
-  marginLeft: '120px',
-  color: '#222735',
-  fontSize: '26px',
+.headText1 {
+  marginLeft: 120px;
+  color: #222735;
+  fontSize: 26px;
   alignSelf: 'center'
 },
-.headText2: {
-  marginRight: '180px',
-  color: '#222735',
-  fontSize: '26px',
+.headText2 {
+  marginRight: 180px;
+  color: #222735;
+  fontSize: 26px;
   alignSelf: 'center'
 },
-.sectionView: {
-  height: '96px',
+.sectionView {
+  height: 96px;
   backgroundColor: 'white'
 },
-.sectionContantView: {
-  flexDirection: 'row',
-  flex: 1,
+.sectionContantView{
+  flexDirection: 'row';
+  flex: 1;
   justifyContent: 'space-between'
 },
-.leftText: {
-  color: '#282D41',
-  fontSize: '24px',
-  marginLeft: '80px',
-  width: width / 2,
+.leftText {
+  color: #282D41;
+  fontSize: 24px;
+  marginLeft: 80px;
+  width: width / 2;
   alignSelf: 'center'
 },
-.rightText: {
-  color: '#EB9650',
-  fontSize: '24px',
-  textAlign: 'right',
-  marginRight: '180px',
+.rightText {
+  color: #EB9650;
+  fontSize: 24px;
+  textAlign: 'right';
+  marginRight: 180px;
   alignSelf: 'center'
 },
-.hairLine: {
-  height: EStyleSheet.hairlineWidth,
-  backgroundColor: '#EEEEEE'
+.hairLine{
+  height: 0.5px;
+  backgroundColor: #EEEEEE
 }
