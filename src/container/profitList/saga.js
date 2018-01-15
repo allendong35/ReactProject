@@ -1,11 +1,11 @@
 import {all, put, takeLatest} from 'redux-saga/effects';
 import {actions} from './redux';
-import api from 'core/api';
+import api from '/lib/api';
 import callApi from 'effects/callApi';
 
 
 function* fetchGetProfitList({payload}) {
-  const response = yield callApi(api.hsfund.fundProfitList, Object.assign({}, {fofXyh: payload._fofXyh}), false);
+  const response = yield callApi(api.misc.helpCenter, Object.assign({}, {fofXyh: payload._fofXyh}), false);
   if (response.ok) {
     if (response.data.retCode === 0) {
       yield put(actions.getProfitList(response.data.retData));

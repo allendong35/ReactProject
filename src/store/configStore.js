@@ -19,7 +19,12 @@ export default function (reducer,saga) {
     middleware.push(createLog());
   }
 
-  const  store = createStore(reducer,{query:qs.parse(location.search)||{}},compose(...enhancer));
+  enhancers.push(applyMiddleware(...middleware));
 
+  const  store = createStore(reducer,{},compose(...enhancers));
+
+  if (sagaMiddleware){
+    sagaMiddleware.run(saga);
+  }
   return store;
 }

@@ -1,9 +1,9 @@
 /* title: 测试商城222 */
 import renderToApp from '../../renderToApp';
-// import reducer from '../../reducer/profitList/index';
+import reducer from '../../container/profitList/redux';
 import IndexPage from '../../container/profitList/IndexPage';
 
-const render = renderToApp(null, {iosFullScreen: true});
+const render = renderToApp(reducer, {iosFullScreen: true});
 
 render(IndexPage);
 if (module.hot) {
