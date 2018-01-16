@@ -1,7 +1,7 @@
 import {all, put, takeLatest} from 'redux-saga/effects';
 import {actions} from './redux';
 import api from '/lib/api';
-import callApi from 'effects/callApi';
+import callApi from '/lib/effects/callApi';
 
 
 function* fetchGetProfitList({payload}) {

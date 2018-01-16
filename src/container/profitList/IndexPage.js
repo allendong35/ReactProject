@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {actions} from './redux';
 
-import "./index.scss"
+import "./index.scss";
 
 @connect(state => state, actions)
 export default class  IndexPage extends Component{

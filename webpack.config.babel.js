@@ -36,7 +36,7 @@ plugins.push(
     }),
     new webpack.DefinePlugin({
         'process.env': {
-            NODE_ENV: options.minimize ? JSON.stringify('production') : JSON.stringify('development'),
+            NODE_ENV:  JSON.stringify('development'),
             // API: JSON.stringify(process.env.API),
             // REMOTEDEV_HOSTNAME: options.minimize ? null : JSON.stringify(getLocalIp()),
             // REMOTEDEV_PORT: options.minimize ? null : JSON.stringify(process.env.npm_package_remotedev_port)
@@ -134,7 +134,8 @@ module.exports = {
     modules: [
       path.join(__dirname,'src'),
       'node_modules'
-    ]
+    ],
+    extensions:['.js','.json']
   },
   bail: true,
   // module: {
@@ -143,13 +144,15 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
+                test: /\.js?$/,
+                loader: "babel-loader",
                 exclude: /node_modules/,
                 query: {
-                    presets: ['react']
+                    presets: ['es2015','react']
                 }
-            }
+            },
+          { test: /\.css$/, loader: "style!css" },
+          { test: /\.scss$/, loader: "style!css!sass" }
         ]
     },
   devtool: 'cheap-module-source-map',//7种SourceMap模式

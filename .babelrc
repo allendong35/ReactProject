@@ -12,7 +12,10 @@
     ]
   ],
   "plugins": [
+    "transform-decorators-legacy",
+    "react-hot-loader/babel",
     "transform-class-properties",
+    ["transform-es2015-classes", {"loose": true}],
     ["transform-object-rest-spread", {"useBuiltIns": true}],
     "transform-async-generator-functions"
   ]
