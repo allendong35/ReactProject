@@ -16,10 +16,10 @@ export default function (reducer,saga) {
   }
 
   if (process.env.NODE_ENV !== 'production') {
-    middleware.push(createLog());
+    middlewares.push(createLog());
   }
 
-  enhancers.push(applyMiddleware(...middleware));
+  enhancers.push(applyMiddleware(...middlewares));
 
   const  store = createStore(reducer,{},compose(...enhancers));
 

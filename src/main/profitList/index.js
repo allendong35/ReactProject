@@ -2,8 +2,8 @@
 import renderToApp from '../../renderToApp';
 import reducer from '../../container/profitList/redux';
 import IndexPage from '../../container/profitList/IndexPage';
-
-const render = renderToApp(reducer, {iosFullScreen: true});
+import saga from '../../container/profitList/saga';
+const render = renderToApp(reducer, saga,{iosFullScreen: true});
 
 render(IndexPage);
 if (module.hot) {

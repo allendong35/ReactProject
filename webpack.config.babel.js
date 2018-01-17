@@ -145,14 +145,21 @@ module.exports = {
         loaders: [
             {
                 test: /\.js?$/,
-                loader: "babel-loader",
+                // loader: "babel-loader",
+              loader:
+                'babel-loader'
+
+              ,
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015','react']
+                  cacheDirectory: true,
+                    // presets: ['es2015','react',"stage-0"]
                 }
             },
-          { test: /\.css$/, loader: "style!css" },
-          { test: /\.scss$/, loader: "style!css!sass" }
+          { test: /\.css$/, loader: "style-loader!css-loader",
+            exclude: /node_modules/},
+          { test: /\.scss$/, loader: "style-loader!css-loader!sass-loader",
+            exclude: /node_modules/}
         ]
     },
   devtool: 'cheap-module-source-map',//7种SourceMap模式

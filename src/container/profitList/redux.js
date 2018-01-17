@@ -19,4 +19,4 @@ export default handleActions({
       return state.merge({error, refreshing: false});
     }
   }
-}, INITIAL_STATE);ctions({FETC})
+}, INITIAL_STATE);
