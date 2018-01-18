@@ -5,7 +5,7 @@ import callApi from 'lib/effects/callApi';
 
 
 function* fetchGetProfitList({payload}) {
-  const response = yield callApi(api.misc.helpCenter, Object.assign({}, {fofXyh: payload._fofXyh}), false);
+  const response = yield callApi(api.misc.helpCenter, false);
   if (response.ok) {
     if (response.data.retCode === 0) {
       yield put(actions.getProfitList(response.data.retData));

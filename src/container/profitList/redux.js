@@ -2,7 +2,7 @@ import {createActions, handleActions} from 'redux-actions';
 
 import immutable from 'seamless-immutable';
 
-export const actions = createActions({FETCH_GET_PROFIT_LIST: _fofXyh => ({_fofXyh})}, 'GET_PROFIT_LIST');
+export const actions = createActions('FETCH_GET_PROFIT_LIST', 'GET_PROFIT_LIST');
 
 export const INITIAL_STATE = immutable({
   error: null,

@@ -135,7 +135,7 @@ module.exports = {
       path.join(__dirname,'src'),
       'node_modules'
     ],
-    extensions:['.js','.json']
+    extensions:['.js','.json']//require省略文件后缀名
   },
   bail: true,
   // module: {
@@ -147,10 +147,8 @@ module.exports = {
                 test: /\.js?$/,
                 // loader: "babel-loader",
               loader:
-                'babel-loader'
-
-              ,
-                exclude: /node_modules/,
+                'babel-loader',//加载babel转义
+                exclude: /node_modules/,//出去的文件夹
                 query: {
                   cacheDirectory: true,
                     // presets: ['es2015','react',"stage-0"]

@@ -3,11 +3,12 @@
     "es2015", "stage-0","react"
   ],
   "plugins": [
-    "transform-decorators-legacy",
+    "transform-decorators-legacy",//转换修饰器
+    "lodash",
     "react-hot-loader/babel",
-    "transform-class-properties",
+    "transform-class-properties",//react对jsx语法的转换
     ["transform-es2015-classes", {"loose": true}],
     ["transform-object-rest-spread", {"useBuiltIns": true}],
-    "transform-async-generator-functions"
+    "transform-async-generator-functions"//转换异步,迭代函数
   ]
 }

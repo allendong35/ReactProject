@@ -3,7 +3,7 @@ import createLog from './log';
 import qs from 'query-string';
 import createSagaMiddleware from 'redux-saga';
 
-export default function (reducer,saga) {
+export default function (reducer,initParams,saga) {
 
   
   const enhancers = [];
@@ -21,7 +21,7 @@ export default function (reducer,saga) {
 
   enhancers.push(applyMiddleware(...middlewares));
 
-  const  store = createStore(reducer,{},compose(...enhancers));
+  const  store = createStore(reducer,{initParams},compose(...enhancers));
 
   if (sagaMiddleware){
     sagaMiddleware.run(saga);

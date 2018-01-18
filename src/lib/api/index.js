@@ -7,7 +7,7 @@ const baseURL = `${API_ROOT}/actapi_v2/mapi/`;
 const instance = apisauce.create({
   baseURL,
   headers: {
-    Origin: apiHost,
+    Origin: baseURL,
     'Cache-Control': 'no-cache',
     'Content-Type': 'application/x-www-form-urlencoded'
   },
