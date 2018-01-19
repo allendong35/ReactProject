@@ -22,7 +22,7 @@ export default (reducer,saga,config = {}) => {
   // const {keyPrefix, whitelist, transforms} = config;
   // const storeConfig = {keyPrefix, whitelist, transforms, relyLoginState, autoLoading};
 
-  const store = configureStore(reducer,immutable([]),saga);
+  const store = configureStore(reducer,immutable({}),saga);
 
   window.HYBRID_VERSION = version;
 

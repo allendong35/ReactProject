@@ -1,7 +1,8 @@
 import {createStore,applyMiddleware,compose} from 'redux';
 import createLog from './log';
-import qs from 'query-string';
+import createReducers from './createReducers';
 import createSagaMiddleware from 'redux-saga';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 export default function (reducer,initParams,saga) {
 
@@ -21,7 +22,7 @@ export default function (reducer,initParams,saga) {
 
   enhancers.push(applyMiddleware(...middlewares));
 
-  const  store = createStore(reducer,{initParams},compose(...enhancers));
+  const  store = createStore(createReducers(reducer),{initParams},composeWithDevTools(...enhancers));
 
   if (sagaMiddleware){
     sagaMiddleware.run(saga);

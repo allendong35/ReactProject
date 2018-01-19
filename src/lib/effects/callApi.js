@@ -4,13 +4,11 @@ import {isBoolean} from 'lodash';
 import frog from '@cfp/frog';
 
 const  ErrorCode = [100010];
-function* callApi(api,params = {}, options = {},showLoading = true) {
+function* callApi(api,params = {}, options = {}) {
 
   if (isBoolean(params)) {
-    showLoading = params;
     params = {};
   } else if (isBoolean(options)) {
-    showLoading = options;
     options = {};
   }
   params.clientId = 1;
@@ -23,10 +21,17 @@ function* callApi(api,params = {}, options = {},showLoading = true) {
 
   yield call(delay, 0);
 
-  if (response && response.ok && ErrorCode.indexOf(response._data.retCode) >= 0){
-    frog.ui.alert('提示','您已经从其他设备登录','好的').then(()=>{
+  if (response && response.ok && ErrorCode.indexOf(response.data.retCode) >= 0){
+  //
+  //   console.log('有没有');
+    yield  frog.ui.alert('提示','您已经从其他设备登录','好的').then(()=>{
       frog.ui.goLogout().then(() => {});
     });
   }
 
+  return response;
 }
+
+export default (...args) => {
+  return call(callApi, ...args);
+};

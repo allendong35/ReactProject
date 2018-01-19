@@ -4,15 +4,16 @@ import frog from '@cfp/frog';
 import {API_ROOT} from '../config';
 
 const baseURL = `${API_ROOT}/actapi_v2/mapi/`;
+console.log('baseURL===>'+API_ROOT);
 const instance = apisauce.create({
   baseURL,
   headers: {
-    Origin: baseURL,
+    // Origin: API_ROOT,
     'Cache-Control': 'no-cache',
     'Content-Type': 'application/x-www-form-urlencoded'
   },
   params: {
-    rn: 1,
+
   },
   withCredentials: 'include',
   timeout: 10000
