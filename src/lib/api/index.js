@@ -10,7 +10,8 @@ const instance = apisauce.create({
   headers: {
     // Origin: API_ROOT,
     'Cache-Control': 'no-cache',
-    'Content-Type': 'application/x-www-form-urlencoded'
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'skey': 'q4c35pcl8si129q77r2urkq136'
   },
   params: {
 
@@ -25,9 +26,11 @@ instance.addAsyncRequestTransform(request => {
         if (UDID) {
           request.headers.UDID = UDID;
         }
-      }), frog.getSkey().then(({skey}) => {
-        request.headers.skey = skey;
-      })]
+      }),
+        // frog.getSkey().then(({skey}) => {
+        //   request.headers.skey = skey;
+        // })
+      ]
   );
 
   console.log(`>>>${JSON.stringify(request)}`);

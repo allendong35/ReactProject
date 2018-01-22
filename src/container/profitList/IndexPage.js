@@ -10,33 +10,52 @@ import "./index.scss";
 export default class  IndexPage extends Component{
   static  displayName = 'profitList';
   static  propTypes = {
-    fofXyh: PropTypes.string,
-    profitItemsList: PropTypes.array,
+    initParams: PropTypes.shape({
+      fofXyh: PropTypes.string
+    }),
+    page: PropTypes.shape({
+      refreshing: PropTypes.bool,
+      profitItemsList: PropTypes.array,
+    }),
     fetchGetProfitList:PropTypes.func
   }
 
-// {
-//   profitItemsList.map((item) => (
-// <div key={item.pid} className="profitItem" onClick={this.goProductDetail(item.pid)}>
-// <div className="fundName">{item.fundName}</div>
-// <div className="profitE2">{item.profitE2}</div>
-// <div className="img"><img src={item.shareImgUrl}/></div>
-// </div>
-// ))
-// }
+
   componentDidMount() {
     this.props.fetchGetProfitList();
+
   }
   render(){
-    const {profitItemsList} = this.props;
+    const {profitItemsList} = this.props.page;
+    if (profitItemsList===undefined){
+      return (
+          <div>加载中....</div>
+      )
+    }
     return(
-        <div className={`mod mod-profitList`}>
+        <div className={`mod mod-profitList ani`}>
           <div className="scroll-warp">
             <div className="head">
-            aaaa
+           净值收益列表
             </div>
             <div className="item-list">
-              abc
+              {
+                profitItemsList.map((item) => (
+                    <div key={item.totalProfitE2} className="profitItem">
+                      <div className="profitItemHead">
+                        <div className="profitDate">{item.profitDate}</div>
+                        <div className="totalProfitE2">{item.totalProfitE2}</div>
+                      </div>
+                      {item.profitDetailList.map((mapItem) => (
+                        <div key={mapItem.profitE2} className="profitDetailItem">
+                          <div className="fundName">{mapItem.fundName}</div>
+                          <div className="profitE2">{mapItem.profitE2}</div>
+                        </div>
+                      ))}
+                      {/*<div className="img"><img src={item.shareImgUrl}/></div>*/}
+                    </div>
+                ))
+              }
             </div>
           </div>
         </div>

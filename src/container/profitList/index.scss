@@ -1,51 +1,43 @@
 @import "src/assets/common/scss/index";
 
-.headBannerImg {
-  height: 350px;
-  marginBottom: 30px
-},
-.headView {
-  height: 100px;
-  flexDirection: 'row';
-  justifyContent: 'space-between';
-  backgroundColor: 'white'
-},
-.headText1 {
-  marginLeft: 120px;
-  color: #222735;
-  fontSize: 26px;
-  alignSelf: 'center'
-},
-.headText2 {
-  marginRight: 180px;
-  color: #222735;
-  fontSize: 26px;
-  alignSelf: 'center'
-},
-.sectionView {
-  height: 96px;
-  backgroundColor: 'white'
-},
-.sectionContantView{
-  flexDirection: 'row';
-  flex: 1;
-  justifyContent: 'space-between'
-},
-.leftText {
+.mod-profitList {
+  background-color: $bgGrey;
+  &.ani .scroll-warp {
+    transition: padding 0.5s cubic-bezier(0.42, 0, 0.33, 1.24) 0s;
+  }
+  .profitItem{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    .profitItemHead {
+      display: flex;
+      flex-direction: row;
+      .profitDate{
+        width: 50%;
+      }
+      .totalProfitE2{
+        width: 50%;
+      }
+    }
+    .profitDetailItem{
+      display: flex;
+      flex-direction: row;
+      .fundName{
+        width: 50%;
+      }
+      .profitE2{
+        width: 50%;
+      }
+    }
+  }
+}
+
+.head{
+  height:96px;
+  width:100%;
+  background-color: white;
   color: #282D41;
-  fontSize: 24px;
-  marginLeft: 80px;
-  width: width / 2;
-  alignSelf: 'center'
-},
-.rightText {
-  color: #EB9650;
-  fontSize: 24px;
-  textAlign: 'right';
-  marginRight: 180px;
-  alignSelf: 'center'
-},
-.hairLine{
-  height: 0.5px;
-  backgroundColor: #EEEEEE
+  font-size: 24px;
+  text-align: center;
+  line-height: 96px;
 }
